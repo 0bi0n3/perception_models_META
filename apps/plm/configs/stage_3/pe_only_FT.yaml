@@ -7,8 +7,8 @@
 #val_jsonl_path: "ue_data/validation.jsonl"
 #output_dir: "./outputs"
 
-name: "pe_only_finetune_test"
-dump_dir: "/home/oberon/projects/perception_models/outputs/pe_finetuned_test"
+name: "plm_3b_stage3"
+dump_dir: "/home/oberon/projects/perception_models/outputs"
 steps: 20
 seed: 777
 optim:
@@ -61,9 +61,9 @@ model:
         use_gaussian: true
 
 data:
-    datamix: apps/plm/datasets/image
+    datamix: "dummy_image:1.0"
     num_workers: 4
-    batch_size: 4
+    batch_size: 1
     image_res: 448
     max_num_tiles: 36
     max_video_frames: 32
@@ -77,11 +77,11 @@ data:
 
 checkpoint:
     dump:
-        every: 500
+        every: 10
         keep: 1
     init_ckpt_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
     is_consolidated_model: True
 
 logging:
-    freq: 10
+    freq: 1
     level: INFO  # Available choices for logging level are: [NOTSET, DEBUG, INFO, WARN, ERROR, FATAL, CRITICAL]
