@@ -1,15 +1,14 @@
 # We use a global batch size of 1024 in stage # 3 for PLM-3B model. Please adjust batch_size as per your training setup.
 # For example, one possible configuration is batch_size=4,nodes=32,gpus_per_node=8 = 4*32*8 = 1024 global batch size.
 
-llm_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
-data_root: "ue_data/images"
-jsonl_path: "ue_data/train.jsonl"
-val_jsonl_path: "ue_data/validation.jsonl"
-output_dir: "./outputs"
+# llm_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
+#data_root: "ue_data/images"
+#jsonl_path: "ue_data/train.jsonl"
+#val_jsonl_path: "ue_data/validation.jsonl"
+#output_dir: "./outputs"
 
-
-name: "plm_3b_stage3"
-dump_dir: ./plm_3b_stage3
+name: "pe_only_finetune_test"
+dump_dir: "/home/oberon/projects/perception_models/outputs/pe_finetuned_test"
 steps: 20
 seed: 777
 optim:
@@ -62,8 +61,11 @@ model:
         use_gaussian: true
 
 data:
-    datamix: 
-      dummy_image: 1.0
+    # datamix: 
+    #   dummy_image: 1.0
+    data_root: "./ue_data/images"
+    jsonl_path: "./ue_data/train.jsonl"
+    val_jsonl_path: "./ue_data/validation.jsonl"
     num_workers: 4
     batch_size: 4
     image_res: 448
@@ -81,7 +83,7 @@ checkpoint:
     dump:
         every: 500
         keep: 1
-    # init_ckpt_path: "facebook/Perception-LM-3B"
+    init_ckpt_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
     is_consolidated_model: True
 
 logging:
