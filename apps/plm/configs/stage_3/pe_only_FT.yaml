@@ -1,32 +1,32 @@
 # We use a global batch size of 1024 in stage # 3 for PLM-3B model. Please adjust batch_size as per your training setup.
 # For example, one possible configuration is batch_size=4,nodes=32,gpus_per_node=8 = 4*32*8 = 1024 global batch size.
 
-llm_path: "path/to/your/downloaded/meta_pe_baseline_model"
-data_root: "/home/oberon/projects/perception_models/apps/pe/docs/assets_FT"
-jsonl_path: "path/to/your/dataset/train.jsonl"  # Use the conversational JSONL format here
-val_jsonl_path: "path/to/your/dataset/validation.jsonl"
-output_dir: "/home/oberon/projects/perception_models/outputs"
+llm_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
+data_root: "ue_data/images"
+jsonl_path: "ue_data/train.jsonl"
+val_jsonl_path: "ue_data/validation.jsonl"
+output_dir: "./outputs"
 
 
 name: "plm_3b_stage3"
 dump_dir: ./plm_3b_stage3
-steps: 2000
+steps: 20
 seed: 777
 optim:
     lr: 2e-5
-    warmup: 120
+    warmup: 2
     lr_min_ratio: 0.01
     clip: 1.0
     weight_decay: 0.01
 
-distributed:
-    fsdp_type: full_shard
-    compile: false
-    model_dtype: bf16
-    matmul_allow_tf32: false
-    selective_activation_checkpointing: false
-    full_activation_checkpointing: true
-    tp_size: 1
+# distributed:
+#     fsdp_type: full_shard
+#     compile: false
+#     model_dtype: bf16
+#     matmul_allow_tf32: false
+#     selective_activation_checkpointing: false
+#     full_activation_checkpointing: true
+#     tp_size: 1
 
 model:
     dim: 3072
@@ -62,25 +62,26 @@ model:
         use_gaussian: true
 
 data:
-    datamix: <Please consider using data split listed in Table A2 of our paper https://arxiv.org/pdf/2504.13180. The weight of the dataset would be same as the number of samples.>
+    datamix: 
+      dummy_image: 1.0
     num_workers: 4
     batch_size: 4
     image_res: 448
     max_num_tiles: 36
     max_video_frames: 32
     vision_input_type: thumb+tile
-    tokenizer_path: facebook/Perception-LM-3B/tokenizer.model
+    tokenizer_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f/tokenizer.model"
     tokenizer_name: plmchat
     conversation_format: plm_sft
 
-profiling:
-    run: false
+# profiling:
+#     run: false
 
 checkpoint:
     dump:
         every: 500
         keep: 1
-    init_ckpt_path: <Point it to the consolidated checkpoints from PLM 3B Stage 2>
+    # init_ckpt_path: "facebook/Perception-LM-3B"
     is_consolidated_model: True
 
 logging:
