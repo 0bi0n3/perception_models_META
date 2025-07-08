@@ -9,7 +9,7 @@
 
 name: "plm_3b_stage3"
 dump_dir: "/home/oberon/projects/perception_models/outputs"
-steps: 20
+steps: 5
 seed: 777
 optim:
     lr: 2e-5
@@ -18,14 +18,14 @@ optim:
     clip: 1.0
     weight_decay: 0.01
 
-# distributed:
-#     fsdp_type: full_shard
-#     compile: false
-#     model_dtype: bf16
-#     matmul_allow_tf32: false
-#     selective_activation_checkpointing: false
-#     full_activation_checkpointing: true
-#     tp_size: 1
+distributed:
+    fsdp_type: full_shard
+    compile: false
+    model_dtype: bf16
+    matmul_allow_tf32: false
+    selective_activation_checkpointing: false
+    full_activation_checkpointing: true
+    tp_size: 1
 
 model:
     dim: 3072
@@ -65,19 +65,19 @@ data:
     num_workers: 4
     batch_size: 1
     image_res: 448
-    max_num_tiles: 36
+    max_num_tiles: 8
     max_video_frames: 32
     vision_input_type: thumb+tile
     tokenizer_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f/tokenizer.model"
     tokenizer_name: plmchat
     conversation_format: plm_sft
 
-# profiling:
-#     run: false
+profiling:
+    run: false
 
 checkpoint:
     dump:
-        every: 10
+        every: 2
         keep: 1
     init_ckpt_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
     is_consolidated_model: True

@@ -4,13 +4,13 @@ seed: 777
 grad_acc_steps: 1
 gc_collect_freq: 1000
 probe_freq: null
-steps: 20
+steps: 5
 data:
   datamix: dummy_image:1.0
   batch_size: 1
   seed: 42
   image_res: 448
-  max_num_tiles: 36
+  max_num_tiles: 8
   vision_input_type: thumb+tile
   num_workers: 4
   tokenizer_path: /home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f/tokenizer.model
@@ -83,9 +83,9 @@ distributed:
   dp_replicate: 2
   tp_size: 1
   selective_activation_checkpointing: false
-  full_activation_checkpointing: false
+  full_activation_checkpointing: true
   compile: false
-  fsdp_type: no_shard
+  fsdp_type: full_shard
   model_dtype: bf16
   matmul_allow_tf32: false
   detect_anomaly: false
@@ -103,7 +103,7 @@ env:
   PYTORCH_CUDA_ALLOC_CONF: expandable_segments:True
 checkpoint:
   dump:
-    every: 10
+    every: 2
     keep: 1
   eval:
     every: 1000
