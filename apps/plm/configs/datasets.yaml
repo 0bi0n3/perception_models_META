@@ -30,5 +30,5 @@ dummy_stc_RTLoc:
     root_dir: apps/plm/dummy_datasets/plm_stc/videos
 
 unreal_dataset:
-    annotation:
-    root_dir:
+    annotation: apps/plm/datasets/ue_data/annotations.jsonl
+    root_dir: apps/plm/datasets/ue_data/images

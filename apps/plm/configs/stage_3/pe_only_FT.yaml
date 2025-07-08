@@ -61,11 +61,7 @@ model:
         use_gaussian: true
 
 data:
-    # datamix: 
-    #   dummy_image: 1.0
-    data_root: "./ue_data/images"
-    jsonl_path: "./ue_data/train.jsonl"
-    val_jsonl_path: "./ue_data/validation.jsonl"
+    datamix: apps/plm/datasets/image
     num_workers: 4
     batch_size: 4
     image_res: 448
