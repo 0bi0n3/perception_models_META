@@ -40,7 +40,7 @@ model:
     weight_tying: true
     rope_scale_factor: 32
     high_freq_factor: 4
-    max_seqlen: 11520
+    max_seqlen: 4096
     freeze_language_model: true
     freeze_vision_model: false
     pooling_ratio: 2

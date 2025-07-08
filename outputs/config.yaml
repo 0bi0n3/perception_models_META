@@ -7,7 +7,7 @@ probe_freq: null
 steps: 20
 data:
   datamix: dummy_image:1.0
-  batch_size: 4
+  batch_size: 1
   seed: 42
   image_res: 448
   max_num_tiles: 36
@@ -51,7 +51,7 @@ model:
   high_freq_factor: 4
   init_base_std: null
   init_std_factor: disabled
-  max_seqlen: 11520
+  max_seqlen: 4096
   seed: 42
   vocab_size: 128256
   weight_tying: true
