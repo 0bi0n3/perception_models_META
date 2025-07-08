@@ -1,6 +1,6 @@
 dummy_image:
-    annotation: apps/plm/dummy_datasets/image/annotations.jsonl
-    root_dir: apps/plm/dummy_datasets/image/images
+    annotation: apps/plm/datasets/image/annotations.jsonl
+    root_dir: apps/plm/datasets/image/images
 
 dummy_multi_image:
     annotation: apps/plm/dummy_datasets/multi_image/annotations.jsonl
@@ -28,3 +28,7 @@ dummy_stc_RCap:
 dummy_stc_RTLoc:
     annotation: apps/plm/dummy_datasets/plm_stc/RTLoc.jsonl
     root_dir: apps/plm/dummy_datasets/plm_stc/videos
+
+unreal_dataset:
+    annotation:
+    root_dir:

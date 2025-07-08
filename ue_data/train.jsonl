@@ -2,10 +2,12 @@
     "image": "./ue_data/images/image_1.png", 
     "conversations": [
         {
-            "from": "human", "value": "Describe the UI in this image."
+            "from": "human", 
+            "value": "Describe the UI in this image."
         }, 
         {
-            "from": "gpt", "value": "A screenshot of the Unreal Engine editor, with the components tab open and SpringArm highlighted, My Blueprint tab open, BP_Kart tab at the top open, and in the details pane the selecting True on Do Collision Test."
+            "from": "gpt", 
+            "value": "A screenshot of the Unreal Engine editor, with the components tab open and SpringArm highlighted, My Blueprint tab open, BP_Kart tab at the top open, and in the details pane the selecting True on Do Collision Test."
         }
     ]
 }
@@ -14,10 +16,12 @@
     "image": "./ue_data/images/image_2.png", 
     "conversations": [
         {
-            "from": "human", "value": "Describe the UI in this image."
+            "from": "human", 
+            "value": "Describe the UI in this image."
         }, 
         {
-            "from": "gpt", "value": "A screenshot of the Unreal Engine editor, focusing on the context window which shows a small preview window in the bottom right with three cars, the middle car is highlighted, in the menus on the right, BP_Kart3 is highlighted in both the Outliner tab and the Details tab."
+            "from": "gpt", 
+            "value": "A screenshot of the Unreal Engine editor, focusing on the context window which shows a small preview window in the bottom right with three cars, the middle car is highlighted, in the menus on the right, BP_Kart3 is highlighted in both the Outliner tab and the Details tab."
         }
     ]
 }
@@ -26,10 +30,12 @@
     "image": "./ue_data/images/image_3.png", 
     "conversations": [
         {
-            "from": "human", "value": "Describe the UI in this image."
+            "from": "human", 
+            "value": "Describe the UI in this image."
         }, 
         {
-            "from": "gpt", "value": "A screenshot of the Unreal Engine editor, showing the main viewport with a simple level, the 'Content Drawer' open at the bottom displaying project assets, and the 'World Outliner' on the right listing all actors currently in the scene."
+            "from": "gpt", 
+            "value": "A screenshot of the Unreal Engine editor, showing the main viewport with a simple level, the 'Content Drawer' open at the bottom displaying project assets, and the 'World Outliner' on the right listing all actors currently in the scene."
         }
     ]
 }
