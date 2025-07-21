@@ -11,7 +11,7 @@ data:
   seed: 42
   image_res: 448
   max_num_tiles: 8
-  vision_input_type: thumb+tile
+  vision_input_type: image
   num_workers: 4
   tokenizer_path: /mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f/tokenizer.model
   tokenizer_name: plmchat
@@ -62,7 +62,7 @@ model:
     image_size: 448
     patch_size: 14
     width: 1024
-    layers: 23
+    layers: 50
     heads: 16
     use_cls_token: true
     use_abs_posemb: true
@@ -104,14 +104,14 @@ env:
 checkpoint:
   dump:
     every: 2
-    keep: 1
+    keep: 2
   eval:
     every: 1000
     keep: 0
   path: checkpoints/plm_3b_pe_finetune/checkpoints
-  init_ckpt_path: /mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f
+  init_ckpt_path: /mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--PE-Spatial-G14-448/snapshots/12594718a2702146ec5f73a6aef4e3cc26c28710/PE-Spatial-G14-448.pt
   vision_model_path: null
-  is_consolidated_model: true
+  is_consolidated_model: false
   continue_training_from_init: false
 profiling:
   run: false

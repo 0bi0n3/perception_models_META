@@ -42,6 +42,10 @@ num_entries_original = original_content.count('}')
 print(f"Found {num_entries_original} entries in the original file.")
 print(f"Repeating the content {num_repeats} times...")
 
+# Ensure there's a newline at the end of the content block to create valid JSONL
+if not original_content.endswith('\n'):
+    original_content += '\n'
+
 # Repeat the content
 new_content = original_content * num_repeats
 

@@ -1,5 +1,5 @@
 {
-    "image": "./ue_data/images/image_1.png", 
+    "image": "image_1.png", 
     "conversations": [
         {
             "from": "human", 
@@ -13,7 +13,7 @@
 }
 
 {
-    "image": "./ue_data/images/image_2.png", 
+    "image": "image_2.png", 
     "conversations": [
         {
             "from": "human", 
@@ -27,7 +27,7 @@
 }
 
 {
-    "image": "./ue_data/images/image_3.png", 
+    "image": "image_3.png", 
     "conversations": [
         {
             "from": "human", 
