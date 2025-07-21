@@ -83,6 +83,7 @@ def inspect_spatial_features(image_path: str, model_name: str, output_path: str)
 
     plt.tight_layout()
     plt.savefig(output_path, bbox_inches="tight", dpi=150)
+    plt.close(fig)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
