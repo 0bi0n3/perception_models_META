@@ -62,7 +62,7 @@ model:
     image_size: 448
     patch_size: 14
     width: 1024
-    layers: 50
+    layers: 23
     heads: 16
     use_cls_token: true
     use_abs_posemb: true
@@ -103,15 +103,15 @@ env:
   PYTORCH_CUDA_ALLOC_CONF: expandable_segments:True
 checkpoint:
   dump:
-    every: 2
-    keep: 2
+    every: 5
+    keep: 1
   eval:
     every: 1000
     keep: 0
   path: checkpoints/plm_3b_pe_finetune/checkpoints
-  init_ckpt_path: /mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--PE-Spatial-G14-448/snapshots/12594718a2702146ec5f73a6aef4e3cc26c28710/PE-Spatial-G14-448.pt
+  init_ckpt_path: /mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f
   vision_model_path: null
-  is_consolidated_model: false
+  is_consolidated_model: true
   continue_training_from_init: false
 profiling:
   run: false

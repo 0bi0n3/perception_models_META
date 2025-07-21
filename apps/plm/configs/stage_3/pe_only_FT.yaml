@@ -43,7 +43,7 @@ model:
         image_size: 448
         patch_size: 14
         width: 1024
-        layers: 50
+        layers: 23
         heads: 16
         use_cls_token: true
         use_abs_posemb: true
@@ -72,10 +72,10 @@ profiling:
 
 checkpoint:
     dump:
-        every: 2
-        keep: 2
-    init_ckpt_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--PE-Spatial-G14-448/snapshots/12594718a2702146ec5f73a6aef4e3cc26c28710/PE-Spatial-G14-448.pt"
-    is_consolidated_model: False
+        every: 5
+        keep: 1
+    init_ckpt_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
+    is_consolidated_model: True
 
 logging:
     freq: 1

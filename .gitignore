@@ -9,3 +9,4 @@ torchinductor_*/*
 tmp*/*
 apps/plm/dummy_datasets
 outputs/checkpoints
+checkpoints
