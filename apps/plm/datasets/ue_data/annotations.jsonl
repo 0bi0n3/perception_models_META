@@ -39,3 +39,17 @@
         }
     ]
 }
+
+{
+    "image": "./ue_data/images/image_4.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "A screenshot of the Unreal Engine editor, showing the main viewport with a simple level, there is car-like object in the centre of the viewport, two tabs are open at the top of the view port, only two tabs are open to the right-hand side of the view port which include the Outliner which lists severl BP actors present in the level, there is also the Details panel which asks the user to select an object to view details and a World Settings tab which cannot be seen."
+        }
+    ]
+}
