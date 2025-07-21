@@ -62,7 +62,7 @@ data:
     max_num_tiles: 8
     max_video_frames: 32
     vision_input_type: thumb+tile
-    tokenizer_path: "facebook/Perception-LM-3B/tokenizer.model"
+    tokenizer_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f/tokenizer.model"
     tokenizer_name: plmchat
     conversation_format: plm_sft
 
@@ -73,7 +73,7 @@ checkpoint:
     dump:
         every: 2
         keep: 1
-    init_ckpt_path: "facebook/Perception-LM-3B"
+    init_ckpt_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
     is_consolidated_model: True
 
 logging:
