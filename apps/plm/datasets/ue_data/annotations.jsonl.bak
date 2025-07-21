@@ -1,0 +1,209 @@
+{
+    "image": "image_1.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor's UI is in the Viewport state with a Static Mesh."
+        }
+    ]
+}
+
+{
+    "image": "image_2.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state."
+        }
+    ]
+}
+
+{
+    "image": "image_3.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game Running In Editor."
+        }
+    ]
+}
+
+{
+    "image": "image_4.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game Running In Editor."
+        }
+    ]
+}
+
+{
+    "image": "image_5.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_6.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_7.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_8.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game Running In Editor."
+        }
+    ]
+}
+
+{
+    "image": "image_9.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_10.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_11.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_12.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Blueprint Editor window state."
+        }
+    ]
+}
+
+{
+    "image": "image_13.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game level in the background."
+        }
+    ]
+}
+
+{
+    "image": "image_14.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game Running In Editor."
+        }
+    ]
+}
+
+{
+    "image": "image_15.png", 
+    "conversations": [
+        {
+            "from": "human", 
+            "value": "Describe the UI state in this image."
+        }, 
+        {
+            "from": "gpt", 
+            "value": "This is Unreal Engine 5 and the Editor UI is in the Level Viewport state with a game Running In Editor."
+        }
+    ]
+}
