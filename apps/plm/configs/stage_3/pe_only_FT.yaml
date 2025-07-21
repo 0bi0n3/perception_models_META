@@ -79,7 +79,7 @@ checkpoint:
     dump:
         every: 2
         keep: 1
-    init_ckpt_path: "/home/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
+    init_ckpt_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--PE-Spatial-G14-448/snapshots/12594718a2702146ec5f73a6aef4e3cc26c28710"
     is_consolidated_model: True
 
 logging:
