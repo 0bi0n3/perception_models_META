@@ -2,11 +2,11 @@
 # For example, one possible configuration is batch_size=4,nodes=32,gpus_per_node=8 = 4*32*8 = 1024 global batch size.
 
 name: "plm_3b_pe_finetune"
-dump_dir: "checkpoints/plm_3b_pe_finetune"
-steps: 5
+dump_dir: "/mnt/hitchcock/scratch/oberon/perception_models_output/${name}"
+steps: 100
 seed: 777
 optim:
-    lr: 2e-5
+    lr: 2e-6
     warmup: 2
     lr_min_ratio: 0.01
     clip: 1.0
@@ -72,11 +72,13 @@ profiling:
 
 checkpoint:
     dump:
-        every: 5
+        every: 500
         keep: 1
     init_ckpt_path: "/mnt/hitchcock/scratch/oberon/.cache/huggingface/hub/models--facebook--Perception-LM-3B/snapshots/b54263fbbb6f7590c89b9c3036a9a9d03ad8441f"
     is_consolidated_model: True
+    path: "${dump_dir}/checkpoints"
+
 
 logging:
-    freq: 1
+    freq: 5
     level: INFO  # Available choices for logging level are: [NOTSET, DEBUG, INFO, WARN, ERROR, FATAL, CRITICAL]
