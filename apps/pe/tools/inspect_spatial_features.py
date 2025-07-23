@@ -94,6 +94,12 @@ if __name__ == "__main__":
         help="Name of the PE model config to use (e.g., 'PE-Spatial-G14-448').",
     )
     parser.add_argument(
+        "--checkpoint_path",
+        type=str,
+        default=None,
+        help="Path to the fine-tuned .pth checkpoint file."
+    )
+    parser.add_argument(
         "--output_dir",
         type=str,
         default="apps/pe/tools/outputs",
@@ -104,7 +110,35 @@ if __name__ == "__main__":
     # Load the model and preprocessing transform once
     print(f"Loading model: {args.model_name}")
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = pe.VisionTransformer.from_config(args.model_name, pretrained=True)
+
+    model_args = {
+        'image_size': 448,
+        'patch_size': 14,
+        'width': 1024,
+        'layers': 23,
+        'heads': 16,
+        'use_cls_token': True,
+        'use_abs_posemb': True,
+        'mlp_ratio': 4.0,
+        'ls_init_value': 0.1,
+        'drop_path': 0.1,
+        'use_ln_post': False,
+        'pool_type': 'none'
+    }
+    model = pe.VisionTransformer(**model_args)
+    
+     # 2. Load weights from either a local checkpoint or download pre-trained
+    if args.checkpoint_path:
+        print(f"Loading fine-tuned weights from: {args.checkpoint_path}")
+        state_dict = torch.load(args.checkpoint_path, map_location='cpu')
+        # The consolidated checkpoint saves the full model, so we extract the vision model part
+        vision_model_state_dict = {k.replace('vision_model.', ''): v for k, v in state_dict.items() if k.startswith('vision_model.')}
+        model.load_state_dict(vision_model_state_dict, strict=False)
+    else:
+        print("No checkpoint path provided. Downloading pre-trained weights.")
+        pretrained_model = pe.VisionTransformer.from_config(args.model_name, pretrained=True)
+        model.load_state_dict(pretrained_model.state_dict())
+
     model = model.to(device)
     model.eval()
     preprocess = transforms.get_image_transform(model.image_size)
