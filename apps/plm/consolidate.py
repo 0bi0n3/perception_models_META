@@ -32,6 +32,12 @@ def main():
         required=True,
         help="Path to the checkpoint directory to consolidate",
     )
+    parser.add_argument(
+        "--output_file",
+        type=str,
+        default=None,
+        help="Path to save the consolidated checkpoint file. Defaults to <ckpt>/consolidated.pth",
+    )
     args = parser.parse_args()
 
     model = build_model(ref_model_path=args.ckpt)
@@ -43,7 +49,12 @@ def main():
     )
 
     consolidated_model_state_dict = model.state_dict()
-    output_file = os.path.join(args.ckpt, "consolidated.pth")
+    output_file = args.output_file or os.path.join(args.ckpt, "consolidated.pth")
+
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(output_file)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
     # Save the consolidated model state_dict using torch.save
     print(f"Saving consolidated model state_dict to: {output_file}")
